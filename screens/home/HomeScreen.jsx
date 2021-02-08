@@ -14,9 +14,9 @@ export default function HomeScreen({ navigation }) {
     const goBack = () => navigation.goBack()
     return (
         <SafeAreaView edges={['right', 'left', 'bottom']} style={styles.container}>
-            <View style={{ flex: 1, padding: 10 }}>
+            <View style={styles.container}>
                 <Text style={{ fontWeight: 'bold', fontSize: 30, textAlign: 'center' }}>Home</Text>
-                <Counter initValue={5} />
+                <Counter initValue={42} />
             </View>
         </SafeAreaView >
     )
@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#ccc',
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: 'center'
     },
 });
