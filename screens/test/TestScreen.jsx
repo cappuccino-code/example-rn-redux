@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, StyleSheet } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useDispatch } from 'react-redux'
 import Actions from '../../redux/actions'
@@ -21,12 +21,23 @@ export default function TestScreen({ navigation }) {
         [dispatch, Actions]
     )
     return (
-        <SafeAreaView edges={['right', 'left', 'bottom']}>
-            <View>
-                <Text>Test Screen</Text>
+        <SafeAreaView edges={['right', 'left', 'bottom']} style={styles.container}>
+            <View >
                 {/* This redux test shows we can dispatch an event from any file */}
-                <Button title='Reset' color='#0F0F0F' onPress={resetCounter} />
+                <Button title='Reset Counter Value' color='#0F0F0F' onPress={resetCounter} style={styles.button} />
             </View>
         </SafeAreaView>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        marginHorizontal: 16,
+    },
+    button: {
+        width: 80,
+        alignSelf: 'flex-end'
+    }
+})
