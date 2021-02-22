@@ -10,8 +10,6 @@ import Counter from '../../components/Counter'
  */
 export default function HomeScreen({ navigation }) {
 
-    // function callback to navigate to the previous page when the user is done with settings
-    const goBack = () => navigation.goBack()
     return (
         <SafeAreaView edges={['right', 'left', 'bottom']} style={styles.container}>
             <View style={styles.container}>
